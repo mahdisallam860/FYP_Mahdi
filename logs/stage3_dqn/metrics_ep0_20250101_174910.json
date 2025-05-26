@@ -1,0 +1,32 @@
+{
+    "episode": 0,
+    "best_reward": -148.3293781284219,
+    "best_success_rate": 0.0,
+    "recent_rewards": [
+        -148.3293781284219
+    ],
+    "recent_successes": [
+        0
+    ],
+    "recent_collisions": [
+        1
+    ],
+    "recent_steps": [
+        84
+    ],
+    "params": {
+        "max_episodes": 1500,
+        "max_steps": 600,
+        "batch_size": 64,
+        "learning_rate": 3e-05,
+        "gamma": 0.99,
+        "initial_epsilon": 0.15,
+        "epsilon_decay": 0.999,
+        "min_epsilon": 0.02,
+        "memory_size": 150000,
+        "target_update_freq": 5,
+        "checkpoint_freq": 100,
+        "resource_monitor_freq": 10
+    },
+    "resource_summary": "Training Time: 0:00:01\nAvg CPU Usage: 48.2%\nAvg Memory Usage: 2.7%"
+}

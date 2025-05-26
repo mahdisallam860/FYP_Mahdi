@@ -1,0 +1,342 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="stage3_modded">
+
+    <!-- Optional: Additional physics configuration -->
+    <physics type="ode">
+      <maxStepSize>0.001</maxStepSize>
+      <realTimeUpdateRate>1000</realTimeUpdateRate>
+      <realTimeFactor>1</realTimeFactor>
+    </physics>
+
+    <!-- Basic Elements -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Outer Walls (±3.5 in x,y) -->
+    <model name="outer_wall1">
+      <static>true</static>
+      <pose>0 3.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="outer_wall2">
+      <static>true</static>
+      <pose>0 -3.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="outer_wall3">
+      <static>true</static>
+      <pose>3.5 0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="outer_wall4">
+      <static>true</static>
+      <pose>-3.5 0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>7 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Inner Walls -->
+    <model name="inner_wall1">
+      <static>true</static>
+      <pose>0 2.0 0.5 0 0 1.5708</pose> <!-- Short vertical near top -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>1.5 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>1.5 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="inner_wall2">
+      <static>true</static>
+      <pose>-1 -1.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>2.5 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>2.5 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Adjusted Inner Wall 3 -->
+    <model name="inner_wall3">
+      <static>true</static>
+      <pose>2.5 0 0.5 0 0 0</pose>  <!-- Moved closer to outer wall -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>1.5 0.1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>1.5 0.1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.2 1</ambient> <!-- Red color -->
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Dynamic Obstacles -->
+    <model name="dynamic_obstacle1">
+      <pose>-2 1.0 0.2 0 0 0</pose> <!-- Adjusted z value -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.4</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <plugin name="dynamic_motion1" filename="libgazebo_ros_planar_move.so">
+        <robotNamespace>/dynamic_obstacle1</robotNamespace>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <pathType>circle</pathType>
+        <pathRadius>0.9</pathRadius>
+        <pathCenterX>-2</pathCenterX>
+        <pathCenterY>1.0</pathCenterY>
+        <cmdTimeout>2.0</cmdTimeout>
+        <odometryRate>20</odometryRate>
+      </plugin>
+    </model>
+
+    <model name="dynamic_obstacle2">
+      <pose>1.5 -2.0 0.2 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.4</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+    <plugin name="dynamic_motion2" filename="libgazebo_ros_planar_move.so">
+      <robotNamespace>/dynamic_obstacle2</robotNamespace>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <pathType>circle</pathType>
+      <pathRadius>0.8</pathRadius>
+      <pathCenterX>1.5</pathCenterX>
+      <pathCenterY>-2.0</pathCenterY>
+      <cmdTimeout>2.0</cmdTimeout>
+      <odometryRate>20</odometryRate>
+    </plugin>
+  </model>
+
+    <model name="dynamic_obstacle3">
+      <pose>1.0 0.5 0.2 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.4</length></cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.4</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+    <plugin name="dynamic_motion3" filename="libgazebo_ros_planar_move.so">
+      <robotNamespace>/dynamic_obstacle3</robotNamespace>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <pathType>circle</pathType>
+      <pathRadius>0.6</pathRadius>
+      <pathCenterX>1.0</pathCenterX>
+      <pathCenterY>0.5</pathCenterY>
+      <cmdTimeout>2.0</cmdTimeout>
+      <odometryRate>20</odometryRate>
+    </plugin>
+  </model>
+
+ <model name="goal1_marker">
+      <static>true</static>
+      <pose>-3 3 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal2_marker">
+      <static>true</static>
+      <pose>3 3 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal3_marker">
+      <static>true</static>
+      <pose>-3 -3 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal4_marker">
+      <static>true</static>
+      <pose>3 -3 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+
+
+  </world>
+</sdf>

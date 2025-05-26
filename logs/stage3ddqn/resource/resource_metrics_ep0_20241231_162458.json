@@ -1,0 +1,13 @@
+{
+    "training_time": [
+        1.258375883102417
+    ],
+    "cpu_usage": [
+        33.6
+    ],
+    "memory_usage": [
+        2.6916151684252725
+    ],
+    "gpu_usage": [],
+    "gpu_memory": []
+}

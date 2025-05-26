@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/alma/catkin_ws/src/dqn3/build/devel/setup.sh

@@ -1,0 +1,189 @@
+
+<sdf version="1.6">
+  <world name="stage1">
+    <!-- Basic Elements -->
+    <include><uri>model://ground_plane</uri></include>
+    <include><uri>model://sun</uri></include>
+
+  
+
+<!-- Boundary Walls -->
+<model name="wall1">
+  <static>true</static>
+  <pose>0 3.5 0.5 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+      <material><ambient>0.8 0.8 0.8 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<model name="wall2">
+  <static>true</static>
+  <pose>0 -3.5 0.5 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+      <material><ambient>0.8 0.8 0.8 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<model name="wall3">
+  <static>true</static>
+  <pose>3.5 0 0.5 0 0 1.5708</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+      <material><ambient>0.8 0.8 0.8 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<model name="wall4">
+  <static>true</static>
+  <pose>-3.5 0 0.5 0 0 1.5708</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><box><size>7 0.1 1</size></box></geometry>
+      <material><ambient>0.8 0.8 0.8 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<!-- Obstacles -->
+<model name="obstacle1">
+  <static>true</static>
+  <pose>-1 1 0.5 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+      <material><ambient>0.5 0.5 0.5 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<model name="obstacle2">
+  <static>true</static>
+  <pose>1 1 0.5 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+      <material><ambient>0.5 0.5 0.5 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<model name="obstacle3">
+  <static>true</static>
+  <pose>-1 -1 0.5 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+      <material><ambient>0.5 0.5 0.5 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+<model name="obstacle4">
+  <static>true</static>
+  <pose>1 -1 0.5 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+    </collision>
+    <visual name="visual">
+      <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+      <material><ambient>0.5 0.5 0.5 1</ambient></material>
+    </visual>
+  </link>
+</model>
+
+    <model name="goal1">
+      <static>true</static>
+      <pose>1.2 1.5 0.01 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.02</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal2">
+      <static>true</static>
+      <pose>-2.5 -2.5 0.01 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.02</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal3">
+      <static>true</static>
+      <pose>3.0 -3.0 0.01 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.02</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal4">
+      <static>true</static>
+      <pose>-0.5 2.8 0.01 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.1</radius><length>0.02</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+</world>
+</sdf>

@@ -1,0 +1,102 @@
+{
+    "DDQN": null,
+    "DQN": {
+        "agent_type": "DQN",
+        "results_by_goal": {
+            "(-3.0, 3.0, 0.0)": {
+                "success": 1,
+                "collisions": 0,
+                "dynamic_collisions": 0,
+                "timeouts": 0,
+                "rewards": [
+                    5634.134292841947
+                ],
+                "steps": [
+                    250
+                ],
+                "min_obstacle_distances": [
+                    0.336821585893631
+                ],
+                "path_efficiency": [
+                    0.8921000030010028
+                ],
+                "average_speed": [
+                    0.017859717999809416
+                ]
+            },
+            "(3.0, 3.0, 0.0)": {
+                "success": 1,
+                "collisions": 0,
+                "dynamic_collisions": 0,
+                "timeouts": 0,
+                "rewards": [
+                    5709.974192149495
+                ],
+                "steps": [
+                    223
+                ],
+                "min_obstacle_distances": [
+                    0.3521300256252289
+                ],
+                "path_efficiency": [
+                    0.886363735885938
+                ],
+                "average_speed": [
+                    0.0201402224491102
+                ]
+            },
+            "(-3.0, -3.0, 0.0)": {
+                "success": 1,
+                "collisions": 0,
+                "dynamic_collisions": 0,
+                "timeouts": 0,
+                "rewards": [
+                    5805.207395760814
+                ],
+                "steps": [
+                    307
+                ],
+                "min_obstacle_distances": [
+                    0.27235034108161926
+                ],
+                "path_efficiency": [
+                    0.7714719368596847
+                ],
+                "average_speed": [
+                    0.01680659164663564
+                ]
+            },
+            "(3.0, -3.0, 0.0)": {
+                "success": 1,
+                "collisions": 0,
+                "dynamic_collisions": 0,
+                "timeouts": 0,
+                "rewards": [
+                    6586.931625985568
+                ],
+                "steps": [
+                    212
+                ],
+                "min_obstacle_distances": [
+                    0.4275149405002594
+                ],
+                "path_efficiency": [
+                    0.9502270066923701
+                ],
+                "average_speed": [
+                    0.019703235541027413
+                ]
+            }
+        },
+        "overall_metrics": {
+            "total_success": 4,
+            "total_collisions": 0,
+            "total_dynamic_collisions": 0,
+            "total_timeouts": 0,
+            "average_steps": 248.0,
+            "average_reward": 5934.061876684456,
+            "success_rate": 100.0,
+            "collision_rate": 0.0
+        }
+    }
+}

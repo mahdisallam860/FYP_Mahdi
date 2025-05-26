@@ -1,0 +1,24 @@
+{
+    "episode_rewards": [
+        -199.54915355841334
+    ],
+    "episode_lengths": [
+        155
+    ],
+    "success_rate": [
+        0.0
+    ],
+    "collision_rate": [
+        1.0
+    ],
+    "average_distance_to_goal": [],
+    "q_values": [
+        0
+    ],
+    "losses": [
+        0.24633950845378896
+    ],
+    "epsilons": [
+        0.6305556603555866
+    ]
+}

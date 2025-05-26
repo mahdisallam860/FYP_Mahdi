@@ -1,0 +1,31 @@
+{
+    "episode": 0,
+    "best_reward": 522.697722981361,
+    "best_success_rate": 0.0,
+    "curriculum_level": 0,
+    "recent_rewards": [
+        522.697722981361
+    ],
+    "recent_successes": [
+        1
+    ],
+    "recent_collisions": [
+        0
+    ],
+    "recent_steps": [
+        45
+    ],
+    "params": {
+        "max_episodes": 1500,
+        "max_steps": 500,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "gamma": 0.99,
+        "initial_epsilon": 1.0,
+        "epsilon_decay": 0.995,
+        "min_epsilon": 0.05,
+        "memory_size": 100000,
+        "target_update_freq": 5,
+        "curriculum_stages": 4
+    }
+}

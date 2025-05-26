@@ -1,0 +1,307 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="stage2">
+    <!-- Basic Elements -->
+    <include><uri>model://ground_plane</uri></include>
+    <include><uri>model://sun</uri></include>
+
+    <!-- Dynamic Goal Marker -->
+
+    <!-- Boundary Walls -->
+    <model name="wall1">
+      <static>true</static>
+      <pose>0 3.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall2">
+      <static>true</static>
+      <pose>0 -3.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall3">
+      <static>true</static>
+      <pose>3.5 0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall4">
+      <static>true</static>
+      <pose>-3.5 0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Original Obstacles -->
+    <model name="obstacle1">
+      <static>true</static>
+      <pose>-1 1 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle2">
+      <static>true</static>
+      <pose>1 1 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle3">
+      <static>true</static>
+      <pose>-1 -1 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle4">
+      <static>true</static>
+      <pose>1 -1 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Additional Obstacles -->
+    <model name="obstacle5">
+      <static>true</static>
+      <pose>0 2 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle6">
+      <static>true</static>
+      <pose>2 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle7">
+      <static>true</static>
+      <pose>-2 -2 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle8">
+      <static>true</static>
+      <pose>2 2 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>1</length></cylinder></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+    <model name="goal1_marker">
+      <static>true</static>
+      <pose>0.5 0.5 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal2_marker">
+      <static>true</static>
+      <pose>1 3 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal3_marker">
+      <static>true</static>
+      <pose>-2.5 -2 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goal4_marker">
+      <static>true</static>
+      <pose>1.5 -1.5 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+      <model name="goal5_marker">
+      <static>true</static>
+      <pose>2.5 2.5 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="goal6_marker">
+      <static>true</static>
+      <pose>-3 3 0.01 0 0 0</pose>
+      <link name="link">
+        <!-- Main goal marker -->
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.9</ambient>
+            <diffuse>0 1 0 0.9</diffuse>
+            <emissive>0 0.3 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+
+  </world>
+</sdf>

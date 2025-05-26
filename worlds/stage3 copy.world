@@ -1,0 +1,338 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="stage3_enhanced">
+    <!-- Physics settings - unchanged -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+    <!-- Basic Elements -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Outer Walls - unchanged -->
+    <model name="outer_wall1">
+      <static>true</static>
+      <pose>0 3.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="outer_wall2">
+      <static>true</static>
+      <pose>0 -3.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="outer_wall3">
+      <static>true</static>
+      <pose>3.5 0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="outer_wall4">
+      <static>true</static>
+      <pose>-3.5 0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>7 0.1 1</size></box></geometry>
+          <material><ambient>0.8 0.8 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Improved Static Obstacles -->
+    <!-- Parallel Barriers -->
+    <model name="static_wall1">
+      <static>true</static>
+      <pose>-1.8 1.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>2.0 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>2.0 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="static_wall2">
+      <static>true</static>
+      <pose>1.8 -1.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>2.0 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>2.0 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Vertical Barriers -->
+    <model name="static_wall3">
+      <static>true</static>
+      <pose>-1.0 -2.0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="static_wall4">
+      <static>true</static>
+      <pose>1.0 2.0 0.5 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Corner Barriers - Now symmetric -->
+    <model name="corner_barrier1">
+      <static>true</static>
+      <pose>2.5 2.5 0.5 0 0 0.785</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="corner_barrier2">
+      <static>true</static>
+      <pose>-2.5 2.5 0.5 0 0 -0.785</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="corner_barrier3">
+      <static>true</static>
+      <pose>-2.5 -2.5 0.5 0 0 0.785</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="corner_barrier4">
+      <static>true</static>
+      <pose>2.5 -2.5 0.5 0 0 -0.785</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.1 1</size></box></geometry>
+          <material><ambient>0.7 0.7 0.7 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+    <!-- Dynamic Obstacles - Fixed height and inertia -->
+    <!-- Dynamic Obstacles -->
+<model name="dynamic_obstacle1">
+  <pose>1.5 1.0 0.1 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <cylinder>
+          <radius>0.2</radius>
+          <length>0.2</length>
+        </cylinder>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <cylinder>
+          <radius>0.2</radius>
+          <length>0.2</length>
+        </cylinder>
+      </geometry>
+      <material>
+        <ambient>1 0 0 1</ambient>
+        <diffuse>1 0 0 1</diffuse>
+      </material>
+    </visual>
+    <inertial>
+      <mass>1.0</mass>
+      <inertia>
+        <ixx>0.02</ixx>
+        <iyy>0.02</iyy>
+        <izz>0.02</izz>
+      </inertia>
+    </inertial>
+  </link>
+  <plugin name="dynamic_motion1" filename="libgazebo_ros_planar_move.so">
+    <robotNamespace>/dynamic_obstacle1</robotNamespace>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryRate>20</odometryRate>
+  </plugin>
+</model>
+
+<model name="dynamic_obstacle2">
+  <pose>-1.5 -1.0 0.1 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <cylinder>
+          <radius>0.2</radius>
+          <length>0.2</length>
+        </cylinder>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <cylinder>
+          <radius>0.2</radius>
+          <length>0.2</length>
+        </cylinder>
+      </geometry>
+      <material>
+        <ambient>0 1 0 1</ambient>
+        <diffuse>0 1 0 1</diffuse>
+      </material>
+    </visual>
+    <inertial>
+      <mass>1.0</mass>
+      <inertia>
+        <ixx>0.02</ixx>
+        <iyy>0.02</iyy>
+        <izz>0.02</izz>
+      </inertia>
+    </inertial>
+  </link>
+  <plugin name="dynamic_motion2" filename="libgazebo_ros_planar_move.so">
+    <robotNamespace>/dynamic_obstacle2</robotNamespace>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryRate>20</odometryRate>
+  </plugin>
+</model>
+
+<model name="dynamic_obstacle3">
+  <pose>0 1.5 0.1 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <cylinder>
+          <radius>0.2</radius>
+          <length>0.2</length>
+        </cylinder>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <cylinder>
+          <radius>0.2</radius>
+          <length>0.2</length>
+        </cylinder>
+      </geometry>
+      <material>
+        <ambient>0 0 1 1</ambient>
+        <diffuse>0 0 1 1</diffuse>
+      </material>
+    </visual>
+    <inertial>
+      <mass>1.0</mass>
+      <inertia>
+        <ixx>0.02</ixx>
+        <iyy>0.02</iyy>
+        <izz>0.02</izz>
+      </inertia>
+    </inertial>
+  </link>
+  <plugin name="dynamic_motion3" filename="libgazebo_ros_planar_move.so">
+    <robotNamespace>/dynamic_obstacle3</robotNamespace>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryRate>20</odometryRate>
+  </plugin>
+</model>
+
+  </world>
+</sdf>

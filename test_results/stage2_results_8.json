@@ -1,0 +1,11 @@
+{
+    "success_rate": 0.0,
+    "collision_rate": 0.0,
+    "timeout_rate": 0.0,
+    "avg_steps": 172.5,
+    "avg_reward": 815.1564768401726,
+    "avg_final_distance": 0.4700249870565328,
+    "std_final_distance": 0.5292543785517265,
+    "min_final_distance": 0.2508738006454951,
+    "max_final_distance": 2.7962363750002273
+}

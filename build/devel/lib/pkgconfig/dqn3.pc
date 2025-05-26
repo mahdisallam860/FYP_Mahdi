@@ -1,0 +1,8 @@
+prefix=/home/alma/catkin_ws/src/dqn3/build/devel
+
+Name: dqn3
+Description: Description of dqn3
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs geometry_msgs nav_msgs
